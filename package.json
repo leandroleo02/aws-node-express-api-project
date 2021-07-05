@@ -1,0 +1,18 @@
+{
+  "name": "aws-node-express-api-project",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "clean": "rimraf .serverless",
+    "build": "npm run clean && serverless package -p app"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "serverless-http": "^2.7.0"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "serverless": "^2.50.0",
+    "serverless-offline": "^7.0.0"
+  }
+}
