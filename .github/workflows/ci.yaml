@@ -64,6 +64,8 @@ jobs:
           source: 's3://lambda-apps-testing-bucket/app'
           dest: './app'
           flags: --recursive
+    
+      - run: serverless config credentials --provider aws --key ${{ secrets.AWS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Deploy
         run: npm run deploy
