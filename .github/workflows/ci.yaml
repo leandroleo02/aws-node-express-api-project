@@ -47,6 +47,13 @@ jobs:
       - build
 
     steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
       - name: Download artfact from S3
         uses: prewk/s3-cp-action@v2
         with:
@@ -57,4 +64,5 @@ jobs:
           flags: --recursive
 
       - name: Deploy
-        run: npm run deploy 
+        run: npm run deploy
+        
