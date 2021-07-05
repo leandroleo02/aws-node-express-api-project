@@ -5,7 +5,8 @@
   "scripts": {
     "clean": "rimraf .serverless",
     "build": "npm run clean && serverless package -p app",
-    "deploy": "serverless deploy --package app"
+    "deploy": "serverless deploy --package app -v",
+    "authenticate": "serverless config credentials --provider aws"
   },
   "dependencies": {
     "express": "^4.17.1",
