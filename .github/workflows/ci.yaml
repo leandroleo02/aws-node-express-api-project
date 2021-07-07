@@ -61,7 +61,7 @@ jobs:
         with:
           aws_access_key_id: ${{ secrets.AWS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          source: 's3://lambda-apps-testing-bucket/app'
+          source: 's3://${{ secrets.AWS_BUCKET }}/app'
           dest: './app'
           flags: --recursive
     
